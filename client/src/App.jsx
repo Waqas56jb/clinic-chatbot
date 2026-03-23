@@ -199,7 +199,13 @@ function App() {
     setIsSending(true);
 
     try {
-      const response = await fetch("http://localhost:3001/api/chat", {
+      const configuredBase = import.meta.env.VITE_API_BASE_URL;
+      const apiBase =
+        configuredBase ??
+        (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+          ? "http://localhost:3001"
+          : "");
+      const response = await fetch(`${apiBase}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: trimmed })
@@ -208,7 +214,7 @@ function App() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data?.error || "Unable to get response.");
+        throw new Error(data?.details ? `${data?.error} ${data?.details}` : data?.error || "Unable to get response.");
       }
 
       setMessages((prev) => [
