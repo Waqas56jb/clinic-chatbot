@@ -1,14 +1,9 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
-import OpenAI from "openai";
 
 const app = express();
 const port = process.env.PORT || 3001;
-
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
-});
 
 app.use(cors());
 app.use(express.json());
@@ -40,21 +35,33 @@ Tone: professional, structured, concise.
 `.trim();
 
 async function classifyScope(message) {
-  const classification = await client.responses.create({
-    model: "gpt-4o-mini",
-    input: [
-      {
-        role: "system",
-        content: [{ type: "input_text", text: SCOPE_CLASSIFIER_PROMPT }]
-      },
-      {
-        role: "user",
-        content: [{ type: "input_text", text: message }]
-      }
-    ]
+  const response = await fetch("https://api.openai.com/v1/responses", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
+    },
+    body: JSON.stringify({
+      model: "gpt-4o-mini",
+      input: [
+        {
+          role: "system",
+          content: [{ type: "input_text", text: SCOPE_CLASSIFIER_PROMPT }]
+        },
+        {
+          role: "user",
+          content: [{ type: "input_text", text: message }]
+        }
+      ]
+    })
   });
 
-  const raw = (classification.output_text || "").trim().toUpperCase();
+  const data = await response.json();
+  if (!response.ok) {
+    throw new Error(data?.error?.message || "Scope classification failed.");
+  }
+
+  const raw = (data?.output_text || "").trim().toUpperCase();
   return raw.includes("IN_SCOPE") ? "IN_SCOPE" : "OUT_OF_SCOPE";
 }
 
@@ -93,27 +100,38 @@ app.post("/api/chat", async (req, res) => {
       return res.json({ reply: outOfScopeResponse() });
     }
 
-    const completion = await client.responses.create({
-      model: "gpt-4o-mini",
-      input: [
-        {
-          role: "system",
-          content: [
-            {
-              type: "input_text",
-              text: RESPONSE_SYSTEM_PROMPT
-            }
-          ]
-        },
-        {
-          role: "user",
-          content: [{ type: "input_text", text: message }]
-        }
-      ]
+    const response = await fetch("https://api.openai.com/v1/responses", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
+      },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        input: [
+          {
+            role: "system",
+            content: [{ type: "input_text", text: RESPONSE_SYSTEM_PROMPT }]
+          },
+          {
+            role: "user",
+            content: [{ type: "input_text", text: message }]
+          }
+        ]
+      })
     });
 
-    const reply = completion.output_text || outOfScopeResponse();
-    return res.json({ reply });
+    const data = await response.json();
+    if (!response.ok) {
+      return res.status(500).json({
+        error: "OpenAI request failed.",
+        details: data?.error?.message || "Unknown error"
+      });
+    }
+
+    return res.status(200).json({
+      reply: data?.output_text || outOfScopeResponse()
+    });
   } catch (error) {
     return res.status(500).json({
       error: "Failed to generate clinic response.",
