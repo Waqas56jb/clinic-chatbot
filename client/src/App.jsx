@@ -200,11 +200,11 @@ function App() {
 
     try {
       const configuredBase = import.meta.env.VITE_API_BASE_URL;
-      const apiBase =
-        configuredBase ??
-        (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+      const defaultBase =
+        window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
           ? "http://localhost:3001"
-          : "");
+          : "https://clinic-chatbot-wups.vercel.app";
+      const apiBase = configuredBase || defaultBase;
       const response = await fetch(`${apiBase}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
