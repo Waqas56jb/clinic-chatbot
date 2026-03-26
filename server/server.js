@@ -24,6 +24,7 @@ const RESPONSE_SYSTEM_PROMPT = `
 You are a professional clinic chatbot assistant for lead generation and patient communication.
 You must answer only clinic and healthcare-chatbot related questions.
 If the topic is outside clinic scope, politely decline and request a clinic-related question.
+You must always respond in Spanish, even if the user writes in English or any other language.
 
 Output requirements:
 1) Start with an H2 heading
@@ -58,7 +59,7 @@ async function classifyScope(message) {
 
   const data = await response.json();
   if (!response.ok) {
-    throw new Error(data?.error?.message || "Scope classification failed.");
+    throw new Error(data?.error?.message || "Fallo la clasificacion de alcance.");
   }
 
   const raw = (data?.output_text || "").trim().toUpperCase();
@@ -67,17 +68,17 @@ async function classifyScope(message) {
 
 function outOfScopeResponse() {
   return [
-    "## Clinic Chatbot Assistant",
+    "## Asistente de Chatbot Clinico",
     "",
-    "**Scope Notice:** I can only answer clinic and healthcare chatbot questions.",
+    "**Aviso de Alcance:** Solo puedo responder preguntas sobre clinicas y chatbots de salud.",
     "",
-    "### What I can help with",
-    "- Appointment booking flows",
-    "- Patient FAQ automation",
-    "- Lead qualification for clinics",
-    "- Handover from chatbot to clinic staff",
+    "### En que puedo ayudarte",
+    "- Flujos de reserva de citas",
+    "- Automatizacion de preguntas frecuentes de pacientes",
+    "- Calificacion de prospectos para clinicas",
+    "- Escalacion del chatbot al personal de la clinica",
     "",
-    "Please ask a clinic-related question."
+    "Por favor, haz una pregunta relacionada con clinicas."
   ].join("\n");
 }
 
@@ -85,14 +86,14 @@ app.post("/api/chat", async (req, res) => {
   try {
     if (!process.env.OPENAI_API_KEY) {
       return res.status(500).json({
-        error: "Server is missing OPENAI_API_KEY."
+        error: "Falta OPENAI_API_KEY en el servidor."
       });
     }
 
     const { message } = req.body ?? {};
 
     if (!message || typeof message !== "string") {
-      return res.status(400).json({ error: "A valid message is required." });
+      return res.status(400).json({ error: "Se requiere un mensaje valido." });
     }
 
     const scope = await classifyScope(message);
@@ -124,8 +125,8 @@ app.post("/api/chat", async (req, res) => {
     const data = await response.json();
     if (!response.ok) {
       return res.status(500).json({
-        error: "OpenAI request failed.",
-        details: data?.error?.message || "Unknown error"
+        error: "Fallo la solicitud a OpenAI.",
+        details: data?.error?.message || "Error desconocido"
       });
     }
 
@@ -134,12 +135,12 @@ app.post("/api/chat", async (req, res) => {
     });
   } catch (error) {
     return res.status(500).json({
-      error: "Failed to generate clinic response.",
-      details: error?.message || "Unknown error"
+      error: "No se pudo generar la respuesta clinica.",
+      details: error?.message || "Error desconocido"
     });
   }
 });
 
 app.listen(port, () => {
-  console.log(`Clinic chatbot server running on http://localhost:${port}`);
+  console.log(`Servidor de chatbot clinico ejecutandose en http://localhost:${port}`);
 });

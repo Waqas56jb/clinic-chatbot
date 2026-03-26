@@ -6,83 +6,83 @@ const imageFallback =
   "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80";
 
 const stats = [
-  { value: "24/7", label: "Patient conversations without delay" },
-  { value: "68%", label: "Faster first response time" },
-  { value: "41%", label: "Increase in qualified bookings" },
-  { value: "3.2x", label: "Higher team productivity" }
+  { value: "24/7", label: "Conversaciones con pacientes sin demoras" },
+  { value: "68%", label: "Primera respuesta más rápida" },
+  { value: "41%", label: "Aumento en reservas calificadas" },
+  { value: "3.2x", label: "Mayor productividad del equipo" }
 ];
 
 const featureCards = [
   {
     icon: "fa-solid fa-stethoscope",
-    title: "Clinical FAQ Intelligence",
-    text: "Answers common patient questions in clear language while keeping your tone consistent across all channels."
+    title: "Inteligencia para Preguntas Frecuentes Clinicas",
+    text: "Responde preguntas comunes de pacientes con lenguaje claro y mantiene un tono consistente en todos los canales."
   },
   {
     icon: "fa-solid fa-calendar-check",
-    title: "Booking and Rescheduling",
-    text: "Collects intent, date, department, and contact details to speed up appointment conversion."
+    title: "Reserva y Reprogramacion",
+    text: "Recopila intencion, fecha, departamento y datos de contacto para acelerar la conversion a citas."
   },
   {
     icon: "fa-solid fa-language",
-    title: "Multilingual Patient Support",
-    text: "Engages users in multiple languages and maintains context for a smoother journey."
+    title: "Soporte Multilingue para Pacientes",
+    text: "Atiende usuarios en varios idiomas y mantiene el contexto para una experiencia mas fluida."
   },
   {
     icon: "fa-solid fa-user-doctor",
-    title: "Human Handover Workflow",
-    text: "Routes urgent or complex requests to your team with all relevant conversation context."
+    title: "Flujo de Escalacion a Personal Humano",
+    text: "Deriva solicitudes urgentes o complejas a tu equipo con todo el contexto relevante de la conversacion."
   },
   {
     icon: "fa-solid fa-chart-line",
-    title: "Performance Analytics",
-    text: "Tracks top intent themes, treatment demand, and booking conversion trends for smart decisions."
+    title: "Analitica de Rendimiento",
+    text: "Monitorea intenciones principales, demanda de tratamientos y tendencias de conversion para decisiones inteligentes."
   },
   {
     icon: "fa-solid fa-shield-heart",
-    title: "Healthcare-Ready Safeguards",
-    text: "Prompts with privacy-first behavior and safe escalation patterns for sensitive conversations."
+    title: "Protecciones Listas para Salud",
+    text: "Incluye comportamiento orientado a la privacidad y patrones de escalacion seguros para conversaciones sensibles."
   }
 ];
 
 const serviceFlow = [
   {
-    title: "Discovery",
-    text: "We map service lines, patient personas, and conversion goals so every chatbot answer supports business outcomes."
+    title: "Descubrimiento",
+    text: "Mapeamos lineas de servicio, perfiles de pacientes y objetivos de conversion para que cada respuesta apoye resultados de negocio."
   },
   {
-    title: "Conversation Architecture",
-    text: "We build structured flows, branching logic, and fallback paths that reduce confusion and improve trust."
+    title: "Arquitectura Conversacional",
+    text: "Construimos flujos estructurados, logica de ramificacion y rutas de respaldo que reducen confusion y mejoran la confianza."
   },
   {
-    title: "Integration and QA",
-    text: "We connect forms, CRM, calendars, and support channels, then test real scenarios before launch."
+    title: "Integracion y Control de Calidad",
+    text: "Conectamos formularios, CRM, calendarios y canales de soporte, y luego probamos escenarios reales antes del lanzamiento."
   },
   {
-    title: "Optimization Loop",
-    text: "We monitor drop-offs, low-performing intents, and handover quality to continuously improve conversion."
+    title: "Ciclo de Optimizacion",
+    text: "Monitoreamos abandonos, intenciones con bajo rendimiento y calidad de escalacion para mejorar conversion continuamente."
   }
 ];
 
 const imagePresentations = [
   {
-    title: "Front Desk Efficiency",
-    text: "Automates repetitive patient queries and reduces call pressure.",
+    title: "Eficiencia en Recepcion",
+    text: "Automatiza consultas repetitivas de pacientes y reduce la presion de llamadas.",
     url: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1400&q=80"
   },
   {
-    title: "Appointment Flow",
-    text: "Captures booking intent and routes requests to the right team.",
+    title: "Flujo de Citas",
+    text: "Captura la intencion de reserva y deriva solicitudes al equipo correcto.",
     url: "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&w=1400&q=80"
   },
   {
-    title: "Patient Guidance",
-    text: "Answers common questions instantly with consistent messaging.",
+    title: "Orientacion al Paciente",
+    text: "Responde preguntas frecuentes al instante con mensajes consistentes.",
     url: "https://images.unsplash.com/photo-1579165466949-3180a3d056d2?auto=format&fit=crop&w=1400&q=80"
   },
   {
-    title: "Care Team Handover",
-    text: "Transfers complex conversations with full context attached.",
+    title: "Escalacion al Equipo de Atencion",
+    text: "Transfiere conversaciones complejas con el contexto completo.",
     url: "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=1400&q=80"
   }
 ];
@@ -90,73 +90,73 @@ const imagePresentations = [
 const gallery = [
   {
     url: "https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&w=1400&q=80",
-    label: "First Response",
-    detail: "Reception and triage support"
+    label: "Primera Respuesta",
+    detail: "Soporte de recepcion y triaje"
   },
   {
     url: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1400&q=80",
-    label: "Consultation Support",
-    detail: "Follow-up and care coordination"
+    label: "Soporte de Consulta",
+    detail: "Seguimiento y coordinacion asistencial"
   },
   {
     url: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1400&q=80",
-    label: "Digital Front Desk",
-    detail: "Instant patient communication"
+    label: "Recepcion Digital",
+    detail: "Comunicacion instantanea con pacientes"
   },
   {
     url: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1400&q=80",
-    label: "Patient Onboarding",
-    detail: "Clear next-step guidance"
+    label: "Incorporacion de Pacientes",
+    detail: "Orientacion clara de siguientes pasos"
   },
   {
     url: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1400&q=80",
-    label: "Care Team Coordination",
-    detail: "Better internal handover"
+    label: "Coordinacion del Equipo de Atencion",
+    detail: "Mejor escalacion interna"
   },
   {
     url: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1400&q=80",
-    label: "Operations Speed",
-    detail: "Faster response across channels"
+    label: "Velocidad Operativa",
+    detail: "Respuesta mas rapida en todos los canales"
   }
 ];
 
 const testimonials = [
   {
     quote:
-      "We reduced repetitive front desk calls dramatically and improved booking quality in just two weeks.",
+      "Reducimos de forma drastica las llamadas repetitivas en recepcion y mejoramos la calidad de reservas en solo dos semanas.",
     name: "Dr. Helena Park",
-    role: "Operations Director, NovaCare Clinics"
+    role: "Directora de Operaciones, Clinicas NovaCare"
   },
   {
     quote:
-      "The patient journey is clear now. Users get instant clarity and our team handles only high-value conversations.",
+      "Ahora el recorrido del paciente es claro. Los usuarios reciben respuestas inmediatas y nuestro equipo atiende solo conversaciones de alto valor.",
     name: "Miguel Santos",
-    role: "Growth Lead, VitaSmile Dental Group"
+    role: "Lider de Crecimiento, Grupo Dental VitaSmile"
   },
   {
     quote:
-      "The chatbot became our 24/7 digital receptionist. It delivers consistent care messaging and better lead routing.",
+      "El chatbot se convirtio en nuestra recepcionista digital 24/7. Ofrece mensajes consistentes de atencion y una mejor derivacion de prospectos.",
     name: "Amara Ibrahim",
-    role: "Head of Digital, CurePoint Diagnostics"
+    role: "Directora Digital, CurePoint Diagnostics"
   }
 ];
 
 const faqs = [
   {
-    q: "Can this support both clinics and wellness brands?",
-    a: "Yes. It supports clinics, diagnostics, dental centers, aesthetics, and wellness services."
+    q: "Puede funcionar para clinicas y marcas de bienestar?",
+    a: "Si. Soporta clinicas, diagnostico, centros dentales, estetica y servicios de bienestar."
   },
   {
-    q: "Do we need technical staff to run it daily?",
-    a: "No. The dashboard and flows are built for non-technical teams, with optional managed support."
+    q: "Necesitamos personal tecnico para operarlo a diario?",
+    a: "No. El panel y los flujos estan diseniados para equipos no tecnicos, con soporte gestionado opcional."
   },
   {
-    q: "Can the chatbot hand over to a real person instantly?",
-    a: "Yes. Escalation rules and priority routing are built in for urgent or sensitive requests."
+    q: "El chatbot puede escalar a una persona real al instante?",
+    a: "Si. Incluye reglas de escalacion y enrutamiento prioritario para solicitudes urgentes o sensibles."
   },
   {
-    q: "What if external images fail to load?",
-    a: "Each image has a fallback source to keep the page stable."
+    q: "Que pasa si las imagenes externas no cargan?",
+    a: "Cada imagen tiene una fuente de respaldo para mantener la pagina estable."
   }
 ];
 
@@ -175,13 +175,13 @@ function App() {
     {
       role: "assistant",
       content: [
-        "## Clinic Chatbot Assistant",
+        "## Asistente de Chatbot Clinico",
         "",
-        "**Welcome:** Ask me about clinic services, patient communication, and appointment flow.",
+        "**Bienvenida:** Preguntame sobre servicios clinicos, comunicacion con pacientes y flujo de citas.",
         "",
-        "- Clinic lead generation chatbot setup",
-        "- Patient FAQ and booking automation",
-        "- Handover flow to clinic staff"
+        "- Configuracion de chatbot para generacion de prospectos clinicos",
+        "- Automatizacion de preguntas frecuentes y reservas",
+        "- Flujo de escalacion al personal de la clinica"
       ].join("\n")
     }
   ]);
@@ -214,7 +214,7 @@ function App() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data?.details ? `${data?.error} ${data?.details}` : data?.error || "Unable to get response.");
+        throw new Error(data?.details ? `${data?.error} ${data?.details}` : data?.error || "No se pudo obtener respuesta.");
       }
 
       setMessages((prev) => [
@@ -223,7 +223,7 @@ function App() {
           role: "assistant",
           content:
             data?.reply ||
-            "## Clinic Chatbot Assistant\n\n**Notice:** I could not generate a response right now."
+            "## Asistente de Chatbot Clinico\n\n**Aviso:** No pude generar una respuesta en este momento."
         }
       ]);
     } catch (error) {
@@ -232,11 +232,11 @@ function App() {
         {
           role: "assistant",
           content: [
-            "## Clinic Chatbot Assistant",
+            "## Asistente de Chatbot Clinico",
             "",
-            `**Server Error:** ${error.message}`,
+            `**Error del Servidor:** ${error.message}`,
             "",
-            "Please verify the backend server is running and `OPENAI_API_KEY` is configured."
+            "Verifica que el servidor backend este en ejecucion y que `OPENAI_API_KEY` este configurada."
           ].join("\n")
         }
       ]);
@@ -252,24 +252,24 @@ function App() {
           <a className="brand" href="#">
             <img
               src="https://img.icons8.com/color/96/medical-doctor.png"
-              alt="BluePeak Clinic AI logo"
+              alt="Logotipo de BluePeak Clinic AI"
               className="brand-logo"
               onError={handleImageError}
             />
             <div>
               <strong>BluePeak Clinic AI</strong>
-              <span>Enterprise conversational system for healthcare growth</span>
+              <span>Sistema conversacional empresarial para crecimiento en salud</span>
             </div>
           </a>
           <nav className="nav-links">
-            <a href="#features">Features</a>
-            <a href="#showcase">How It Works</a>
-            <a href="#workflow">Workflow</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#contact">Contact</a>
+            <a href="#features">Funciones</a>
+            <a href="#showcase">Como Funciona</a>
+            <a href="#workflow">Proceso</a>
+            <a href="#testimonials">Testimonios</a>
+            <a href="#contact">Contacto</a>
           </nav>
           <a className="btn btn-primary" href="#contact">
-            Book Strategy Call
+            Reservar Llamada Estrategica
           </a>
         </div>
       </header>
@@ -279,28 +279,28 @@ function App() {
           <img
             className="hero-bg"
             src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=2000&q=80"
-            alt="Premium clinic environment"
+            alt="Entorno clinico premium"
             onError={handleImageError}
           />
           <div className="hero-overlay" />
           <div className="container hero-content">
-            <h1>Turn every visitor into a confident patient with AI-first communication.</h1>
+            <h1>Convierte cada visitante en un paciente confiado con comunicacion impulsada por IA.</h1>
             <p>
-              A conversion-focused landing page that explains your service clearly, builds
-              trust fast, and turns more visitors into qualified patient leads.
+              Una landing enfocada en conversion que explica tus servicios con claridad, genera
+              confianza rapido y convierte mas visitantes en prospectos calificados.
             </p>
             <div className="hero-actions">
               <a className="btn btn-primary" href="#features">
-                Explore Platform
+                Explorar Plataforma
               </a>
               <a className="btn btn-ghost" href="#showcase">
-                See How It Works
+                Ver Como Funciona
               </a>
             </div>
             <div className="hero-badges">
-              <span>HIPAA-aware conversation flows</span>
-              <span>Omnichannel engagement</span>
-              <span>Fast deployment in days</span>
+              <span>Flujos conversacionales adaptados a HIPAA</span>
+              <span>Atencion omnicanal</span>
+              <span>Implementacion rapida en dias</span>
             </div>
           </div>
         </section>
@@ -317,10 +317,10 @@ function App() {
         <section id="features" className="section">
           <div className="container">
             <div className="section-head">
-              <h2>Built to perform fast and convert better.</h2>
+              <h2>Creado para rendir rapido y convertir mejor.</h2>
               <p>
-                The platform combines healthcare-focused messaging and practical automation
-                flows that improve patient satisfaction and clinic efficiency.
+                La plataforma combina mensajes enfocados en salud y automatizaciones practicas
+                que mejoran la satisfaccion del paciente y la eficiencia de la clinica.
               </p>
             </div>
             <div className="feature-grid">
@@ -338,22 +338,22 @@ function App() {
         <section id="showcase" className="section section-soft">
           <div className="container showcase-shell">
             <div className="showcase-main">
-              <h2>Clinic chatbot advantages for real patient communication.</h2>
+              <h2>Ventajas del chatbot clinico para la comunicacion real con pacientes.</h2>
               <p>
-                A minimal, clear presentation helps visitors understand value quickly. This
-                section focuses on outcomes: faster response, better booking quality, and
-                smoother patient support operations.
+                Una presentacion minima y clara ayuda a entender el valor rapidamente. Esta
+                seccion se centra en resultados: respuesta mas rapida, mejor calidad de reservas
+                y operaciones de soporte mas fluidas.
               </p>
               <ul className="showcase-points">
-                <li>Instant answers for common patient questions.</li>
-                <li>Structured booking and rescheduling support.</li>
-                <li>Clean handover to clinic staff when needed.</li>
-                <li>Consistent communication across channels.</li>
+                <li>Respuestas instantaneas para preguntas frecuentes.</li>
+                <li>Soporte estructurado para reservas y reprogramaciones.</li>
+                <li>Escalacion clara al personal clinico cuando se necesita.</li>
+                <li>Comunicacion consistente en todos los canales.</li>
               </ul>
               <div className="showcase-image">
                 <img
                   src="https://images.unsplash.com/photo-1579165466991-467135ad3110?auto=format&fit=crop&w=1600&q=80"
-                  alt="Clinic team using chatbot-enabled communication"
+                  alt="Equipo clinico usando comunicacion asistida por chatbot"
                   onError={handleImageError}
                 />
               </div>
@@ -375,7 +375,7 @@ function App() {
         <section className="section">
           <div className="container">
             <div className="section-head">
-              <h2>Real clinic scenarios your chatbot can handle.</h2>
+              <h2>Escenarios clinicos reales que tu chatbot puede gestionar.</h2>
             </div>
             <div className="gallery-pattern">
               {gallery.map((item, idx) => (
@@ -394,12 +394,12 @@ function App() {
         <section id="workflow" className="section section-soft">
           <div className="container">
             <div className="section-head">
-              <h2>End-to-end implementation from strategy to scaling.</h2>
+              <h2>Implementacion de punta a punta, de la estrategia al escalado.</h2>
             </div>
             <div className="flow-grid">
               {serviceFlow.map((item, idx) => (
                 <article key={item.title} className="flow-card">
-                  <span>Phase {idx + 1}</span>
+                  <span>Fase {idx + 1}</span>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
                 </article>
@@ -411,7 +411,7 @@ function App() {
         <section id="testimonials" className="section">
           <div className="container">
             <div className="section-head">
-              <h2>Proof that chatbot automation drives measurable growth.</h2>
+              <h2>Prueba de que la automatizacion con chatbot impulsa crecimiento medible.</h2>
             </div>
             <div className="testimonial-grid">
               {testimonials.map((item) => (
@@ -428,7 +428,7 @@ function App() {
         <section className="section section-soft">
           <div className="container">
             <div className="section-head">
-              <h2>Everything important, explained clearly.</h2>
+              <h2>Todo lo importante, explicado con claridad.</h2>
             </div>
             <div className="faq-grid">
               {faqs.map((item) => (
@@ -443,17 +443,17 @@ function App() {
 
         <section id="contact" className="section container">
           <div className="contact-card">
-            <h2>Build your full clinic landing system now.</h2>
+            <h2>Construye ahora tu sistema completo de landing clinica.</h2>
             <p>
-              We can customize this page with your clinic services, departments, and lead
-              capture flow so it works as a practical patient acquisition channel.
+              Podemos personalizar esta pagina con tus servicios, departamentos y flujo de
+              captacion de leads para que funcione como un canal practico de adquisicion.
             </p>
             <div className="hero-actions">
               <a className="btn btn-primary" href="mailto:contacto@solucionclinica.com">
-                Start Conversation
+                Iniciar Conversacion
               </a>
               <a className="btn btn-ghost" href="tel:+34000000000">
-                Call +34 000 000 000
+                Llamar al +34 000 000 000
               </a>
             </div>
           </div>
@@ -466,32 +466,32 @@ function App() {
             <a className="brand" href="#">
               <img
                 src="https://img.icons8.com/color/96/medical-doctor.png"
-                alt="BluePeak Clinic AI logo"
+              alt="Logotipo de BluePeak Clinic AI"
                 className="brand-logo"
                 onError={handleImageError}
               />
               <div>
                 <strong>BluePeak Clinic AI</strong>
-                <span>Modern conversational growth platform for clinics</span>
+                <span>Plataforma moderna de crecimiento conversacional para clinicas</span>
               </div>
             </a>
             <p className="footer-text">
-              Built for healthcare teams that want a clear, high-converting lead generation
-              experience.
+              Creado para equipos de salud que buscan una experiencia clara y de alta conversion
+              para generacion de leads.
             </p>
           </div>
           <div className="footer-links">
-            <h4>Navigation</h4>
-            <a href="#features">Features</a>
-            <a href="#showcase">How It Works</a>
-            <a href="#workflow">Workflow</a>
-            <a href="#testimonials">Testimonials</a>
+            <h4>Navegacion</h4>
+            <a href="#features">Funciones</a>
+            <a href="#showcase">Como Funciona</a>
+            <a href="#workflow">Proceso</a>
+            <a href="#testimonials">Testimonios</a>
           </div>
           <div className="footer-links">
-            <h4>Contact</h4>
+            <h4>Contacto</h4>
             <a href="mailto:contacto@solucionclinica.com">contacto@solucionclinica.com</a>
             <a href="tel:+34000000000">+34 000 000 000</a>
-            <span>Copyright 2026 BluePeak Clinic AI</span>
+            <span>Derechos reservados 2026 BluePeak Clinic AI</span>
           </div>
         </div>
       </footer>
@@ -500,34 +500,34 @@ function App() {
         className="chatbot-fab"
         type="button"
         onClick={() => setIsChatOpen((prev) => !prev)}
-        aria-label="Open clinic chatbot"
+        aria-label="Abrir chatbot clinico"
       >
         <img
           src="https://img.icons8.com/color/96/chat--v1.png"
-          alt="Chatbot icon"
+          alt="Icono de chatbot"
           onError={handleImageError}
         />
       </button>
 
       {isChatOpen && (
-        <aside className="chatbot-panel" aria-label="Clinic chatbot panel">
+        <aside className="chatbot-panel" aria-label="Panel de chatbot clinico">
           <header className="chatbot-header">
             <div className="chatbot-title">
               <img
                 src="https://img.icons8.com/color/96/chat--v1.png"
-                alt="Clinic chatbot logo"
+                alt="Logotipo de chatbot clinico"
                 onError={handleImageError}
               />
               <div>
-                <strong>Clinic Chatbot</strong>
-                <span>Real-time clinic communication assistant</span>
+                <strong>Chatbot Clinico</strong>
+                <span>Asistente de comunicacion clinica en tiempo real</span>
               </div>
             </div>
             <button
               className="chatbot-close"
               type="button"
               onClick={() => setIsChatOpen(false)}
-              aria-label="Close chatbot"
+              aria-label="Cerrar chatbot"
             >
               <i className="fa-solid fa-xmark" />
             </button>
@@ -543,18 +543,18 @@ function App() {
                 )}
               </article>
             ))}
-            {isSending && <p className="chatbot-loading">Thinking...</p>}
+            {isSending && <p className="chatbot-loading">Pensando...</p>}
           </div>
 
           <form className="chatbot-input-wrap" onSubmit={handleSendMessage}>
             <textarea
               value={chatInput}
               onChange={(event) => setChatInput(event.target.value)}
-              placeholder="Ask clinic-related questions only..."
+              placeholder="Haz solo preguntas relacionadas con clinicas..."
               rows={2}
             />
             <button className="btn btn-primary" type="submit" disabled={isSending}>
-              {isSending ? "Sending..." : "Send"}
+              {isSending ? "Enviando..." : "Enviar"}
             </button>
           </form>
         </aside>
